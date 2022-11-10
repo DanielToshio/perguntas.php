@@ -7,12 +7,11 @@ use App\Model\Imc;
 
 class ImcTest extends TestCase
 {
-    public function testGetImc()
+    public function testGetPeso()
     {
         $peso = 85;
         $altura = 1.75;
         $imc = new Imc($altura, $peso);
-
         $this->assertEquals($peso / ($altura * $altura), $imc->getImc());
     }
 
@@ -25,9 +24,8 @@ class ImcTest extends TestCase
 
     public function testGetClassificacao()
     {
-        $imc = new Imc();
-        $this->assertFalse($imc->getClassificacao());
-
+        
+        
         //Quando o IMC < 18,5
         $imc->setAltura(1.95);
         $imc->setPeso(70.34);
